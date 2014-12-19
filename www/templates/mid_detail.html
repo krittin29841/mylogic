@@ -1,0 +1,25 @@
+<ion-view title="Mid">
+	<ion-content class="has-header" ng-controller="DashCtrl">
+		<div class="card">
+		    <div class="item item-divider">
+		        <center>Midterm Exam</center>    
+		    </div>
+		    <div class="item item-text-wrap ">
+		        <div class="list">
+		          <label class="item item-input">
+		            <i class="icon ion-search placeholder-icon"></i>
+		            <input type="text" ng-model="fil_mid" placeholder="Search">
+		          </label>
+		        </div>
+		    </div>
+		   
+		    <div class="item item-text-wrap" ng-repeat="mid in Midterm[0].data | filter:fil_mid" class="item item-text-wrap">
+		        <div class="row">
+		            <div class="col col-20 col-center"> {{mid.mid_start}}<br><h3>{{mid.mid_day}} {{mid.month_name}}</h3>{{mid.mid_week}}</div>
+		            <div class="col col-10 col-center"><font class="lineCenter" size="70px" color="{{mid.day_color}}">|</font></div>
+		            <div class="col col-75">{{ mid.subject_name }} <h3>{{ mid.subject_id }}</h3></div>
+		        </div>
+		    </div>
+		</div>
+	</ion-content>
+</ion-view>
